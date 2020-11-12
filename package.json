@@ -1,0 +1,23 @@
+{
+  "name": "upload_test",
+  "version": "1.0.0",
+  "description": "aaaaa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foranice/upload_test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/foranice/upload_test/issues"
+  },
+  "homepage": "https://github.com/foranice/upload_test#readme",
+  "dependencies": {
+    "ali-oss": "^6.11.2",
+    "express": "^4.17.1"
+  }
+}
