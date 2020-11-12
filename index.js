@@ -1,10 +1,8 @@
-let OSS = require('ali-oss');
-let STS=OSS.STS
+//express部分
+
 const express = require('express')
 const app = express()
 const port = 80
-
-
 
 
 app.all('*', (req, res, next) => {
@@ -18,7 +16,7 @@ app.all('*', (req, res, next) => {
 
 app.get('/getToken',async (req, res) => {
     let token = await assumeRole()
-
+    token.region='oss-cn-beijing'
     let result={
         code:0,
         data:token
@@ -27,6 +25,11 @@ app.get('/getToken',async (req, res) => {
     res.send(result);
 })
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+//OSS部分
+
+let OSS = require('ali-oss');
+let STS=OSS.STS
 let sts = new STS({
     // 阿里云主账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM账号进行API访问或日常运维，请登录RAM控制台创建RAM账号。
     accessKeyId: 'LTAI4GBBhbrZdzwkSB6Lzsce',
